@@ -21,6 +21,7 @@ _main:
     add     x0, x3, x2    // 2 + 5 = 7
     mov     x4, x0        // x4 = x0 = 7
     sub     x0, x4, x3    // x0 = 7 - 2 = 5
+    lsr     x0, x0, #1    // x0 = 5; => 0101 => apply 1 shift right => 0010 = 2
 
     // Step 2: convert number to ASCII
     bl      convert_to_ascii
