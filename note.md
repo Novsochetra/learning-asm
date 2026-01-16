@@ -78,7 +78,12 @@ since we don't have privilege to access lldb for debugging, the only solution is
 
 ```asm
 _main:
-    mov x0, #10
+    mov x3, #20
+    mov x4, #30
+
+    add x5, x3, x4
+    mov x0, x5
+
 
     b exit
 
@@ -87,5 +92,5 @@ exit:
     svc 0x80
 ```
 
-then we can run shell `echo $?` so it will print the exit code that previously program exit.
+then we can run shell `echo $?` so it will print the exit code that previously program exit. the shell going to ouput `50`
 
